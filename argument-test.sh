@@ -5,8 +5,6 @@ default_branch_name="main"
 default_env_file=".env"
 default_project_name="Ghaith-Dev"
 
-# Function to update the environment based on the branch name
-update_environment() {
   branch_name=$1
 
   if [[ $branch_name == "dev" ]]; then
@@ -28,15 +26,12 @@ update_environment() {
 
   # Return the project name
   echo "$project_name"
-}
 
-# Pass the argument to the update_environment function and save the result
-project_name=$(update_environment "$1")
-
+cd test
 rm '.env'
 
 # Copy the appropriate environment file based on the branch name
 cp "$default_env_file" '.env'
 
-touch $project_name=
+touch $project_name
 
