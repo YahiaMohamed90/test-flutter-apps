@@ -13,19 +13,19 @@ if [[ $branch_name == "dev" ]]; then
     # If the branch name is "dev", update the values accordingly
     git pull origin dev
     rm 'test/.env'
-    cp '.env.development' '/home/yahia/maqare-dump/aborting-test/test-flutter-apps/test/.env'
+    cp '.env.development' 'test/.env'
     project_name="Ghaith-Dev"
 elif [[ $branch_name == "staging" ]]; then
     # If the branch name is "staging", update the values accordingly
     git pull origin main
     rm 'test/.env'
-    cp '.env.staging' '/home/yahia/maqare-dump/aborting-test/test-flutter-apps/test/.env'
+    cp '.env.staging' 'test/.env'
     project_name="Ghaith-Staging"
 else
     # For any other branch name, use the default values
     git pull origin "$default_branch_name"
     rm 'test/.env'
-    cp '.env.development' '/home/yahia/maqare-dump/aborting-test/test-flutter-apps/test/.env'
+    cp '.env.development' 'test/.env'
     project_name="$default_project_name"
 fi
 
