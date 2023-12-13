@@ -5,33 +5,30 @@ default_branch_name="main"
 default_env_file=".env"
 default_project_name="Ghaith-Dev"
 
-  branch_name=$1
+# Get the branch name from the command line argument
+branch_name="$1"
 
-  if [[ $branch_name == "dev" ]]; then
-    # If the branch name is dev, update the values accordingly
-    git pull  origin dev
-    cp '.env.development' "$default_env_file"
+# Check the branch name and update values accordingly
+if [[ $branch_name == "dev" ]]; then
+    # If the branch name is "dev", update the values accordingly
+    git pull origin dev
+    rm 'test/.env'
+    cp '.env.development' 'test/.env'
     project_name="Ghaith-Dev"
-  elif [[ $branch_name == "staging" ]]; then
-    # If the branch name is staging, update the values accordingly
-    git pull  origin main
-    cp '.env.staging' "$default_env_file"
+elif [[ $branch_name == "staging" ]]; then
+    # If the branch name is "staging", update the values accordingly
+    git pull origin main
+    rm 'test/.env'
+    cp '.env.staging' 'test/.env'
     project_name="Ghaith-Staging"
-  else
+else
     # For any other branch name, use the default values
-    git pull  origin "$default_branch_name"
-    cp '.env.development' "$default_env_file"
+    git pull origin "$default_branch_name"
+    rm 'test/.env'
+    cp '.env.development' 'test/.env'
     project_name="$default_project_name"
-  fi
+fi
 
-  # Return the project name
-  echo "$project_name"
-
-cd test
-rm '.env'
-
-# Copy the appropriate environment file based on the branch name
-cp "$default_env_file" '.env'
-
-touch $project_name
+# Return the project name
+echo "$project_name"
 
