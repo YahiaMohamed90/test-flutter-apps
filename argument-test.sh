@@ -25,7 +25,7 @@ else
     # For any other branch name, use the default values
     git pull origin "$default_branch_name"
     rm 'test/.env'
-    cp '.env.development' 'test/.env'
+    cp '.env.development' 'test/"$default_env_file"'
     project_name="$default_project_name"
 fi
 
