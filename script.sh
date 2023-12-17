@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Define the conflicting file
+# Define the conflicting file new sssssssssssssssssssssss
 conflicting_file="README.md"
-
 # Check if there are local changes to the conflicting file
 if git diff --quiet "$conflicting_file"; then
     echo "No local changes to $conflicting_file. Pulling changes..."
