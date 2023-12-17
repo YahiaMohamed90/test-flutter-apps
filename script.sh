@@ -2,6 +2,7 @@
 
 # Define the conflicting file new sssssssssssssssssssssss
 conflicting_file="README.md"
+git pull origin dev
 
 # Check if there are local changes to the conflicting file
 if git diff --quiet "$conflicting_file"; then
