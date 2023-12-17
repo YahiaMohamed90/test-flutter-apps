@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Define the conflicting file new
+# Define the conflicting file new sssssssssssssssssssssss
 conflicting_file="README.md"
 
 # Check if there are local changes to the conflicting file
