@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Define the default valuessssss
+# Define the default valuessssss new
 default_branch_name="main"
 default_env_file=".env"
 default_project_name="Ghaith-Dev"
