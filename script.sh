@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Define the conflicting file new sssssssssssssssssssssss
+# Define the conflicting file new 
 conflicting_file="README.md"
 # Check if there are local changes to the conflicting file
 if git diff --quiet "$conflicting_file"; then
